@@ -1,5 +1,7 @@
 \documentclass{book}
 
+\usepackage{multicol}
+
 \begin{document}
 \chapter {Discrete Mathematics}
 
@@ -33,6 +35,142 @@ The \textbf{truth value} of a proposition is true, denoted by T, if it is a true
 Many mathematical statements are constructed by combining one or more propositions. New propositions, called \textbf{compound propositions} are formed from existing propositions using logical operators.
 
 \subsection {Logical Operators}
+\begin{enumerate}
+\item \textbf{Negation}
+Let \emph{p} be a proposition. The \emph{negation of p}, denoted by $\lnot p$
+(also denoted by $\overline p$), is the statement
+\begin{center}
+"It is not the case that p"
+\end{center}
+The proposition $\lnot p$ is read "not p". The truth value of the negation of p, i.e. $\lnot p$, is the opposite of the truth value of p.
+
+\begin{center}
+\begin{tabular}{ |c|c|}
+\hline
+$p$ & $\neg p$  \\ \hline
+False & True \\ 
+True & False \\ \hline
+\end{tabular}
+\end{center}
+
+\item \textbf{Conjunction}
+Let \emph{p} and \emph{q} be propositions. The \emph{conjunction} of \emph{p} and \emph{q}, denoted by $p \land q$ is true when both \emph{p} and \emph{q} are true and is false otherwise.
+
+\begin{center}
+\begin{tabular}{ |c|c|c|}
+\hline
+$p$ & $q$ & $p \land q$  \\ \hline
+False & False & False \\
+False & True & False \\
+True & False & False \\
+True & True & True \\ \hline
+\end{tabular}
+\end{center}
+
+\item \textbf{Disjunction}
+Let \emph{p} and \emph{q} be propositions. The \emph{disjunction} of \emph{p} and \emph{q}, denoted by $p \lor q$ is false when both \emph{p} and \emph{q} are false and is true otherwise.
+
+\begin{center}
+\begin{tabular}{ |c|c|c|}
+\hline
+$p$ & $q$ & $p \lor q$  \\ \hline
+False & False & False \\
+False & True & True \\
+True & False & True \\
+True & True & True \\ \hline
+\end{tabular}
+\end{center}
+
+\item \textbf{Exclusive Or}
+Let \emph{p} and \emph{q} be propositions. The \emph{exclusive or} of \emph{p} and \emph{q}, denoted by $p \oplus q$, is the proposition that is true when exactly one of \emph{p} and \emph{q} is true and is false otherwise.
+
+\begin{center}
+\begin{tabular}{ |c|c|c|}
+\hline
+$p$ & $q$ & $p \oplus q$  \\ \hline
+False & False & False \\
+False & True & True \\
+True & False & True \\
+True & True & False \\ \hline
+\end{tabular}
+\end{center}
+
+\item \textbf{Conditional}
+Let \emph{p} and \emph{q} be propositions. The \emph{Conditional statement} $p \to q$ is the proposition "if p, then q". The conditional statement $p \to q$ is false when \emph{p} is true and \emph{q} is false, and true otherwise. In the conditional statment $p \to q$, \emph{p} is called the hypothesis(or \emph{antecedent} or \emph{premise}) and \emph{q} is called the \emph{conclusion}(or \emph{consequence}).
+
+\begin{center}
+\begin{tabular}{ |c|c|c|}
+\hline
+$p$ & $q$ & $p \to q$  \\ \hline
+False & False & True \\
+False & True & True \\
+True & False & False \\
+True & True & True \\ \hline
+\end{tabular}
+\end{center}
+
+other ways to describe \emph{Conditional Statements}:
+\begin{multicols}{2}
+\begin{enumerate}
+\item "if \emph{p}, then \emph{q}"
+\item "if \emph{p}, \emph{q}"
+\item "\emph{p} is sufficient for \emph{q}"
+\item "\emph{q} if \emph{p}"
+\item "\emph{q} when \emph{p}"
+\item "a neccessary condition for \emph{p} is \emph{q}"
+\item "\emph{q} unless $\lnot p$"
+\item "\emph{p} implies \emph{q}"
+\item "\emph{p} only if \emph{q}"
+\item "a sufficient condition for \emph{q} is \emph{p}"
+\item "\emph{q} whenever \emph{p}"
+\item "\emph{q} is necessary for \emph{p}"
+\item "\emph{q} follows from \emph{p}"
+\end{enumerate}
+\end{multicols}
+
+\textbf{CONVERSE, CONTRAPOSITIVE AND INVERSE} We can form some new conditional statements starting with a conditional statement $p \to q$.
+\begin{enumerate}
+\item The proposition $q \to p$ is called the \emph{Converse} of $p \to q$.
+\item The proposition $\lnot q \to \lnot p$ is called the \emph{Contrapositive} of $p \to q$.
+\item The proposition $\lnot p \to \lnot q$ is called the \emph{Inverse} of $p \to q$.
+\end{enumerate}
+\textbf{Note:} 
+\begin{enumerate}
+\item When two compound propositions always have the same truth value we call them \textbf{equivalent}.
+\item Conditional ($p \to q$) and Contrapositive($\lnot q \to \lnot p$) are equivalent.
+\item Converse ($q \to p$) and Inverse($\lnot p \to \lnot q$) are equivalent.
+\end{enumerate}
+
+\item \textbf{Biconditional}
+Let \emph{p} and \emph{q} be propositions. The \emph{biconditional statement} $p \leftrightarrow q$ is a propostion "\emph{p} if and only if \emph{q}".  The biconditional statement $p \leftrightarrow q$ is true when \emph{p} and \emph{q} have the same truth values, and is false otherwise. Biconditional statements are also called \emph{bi-implications}.
+
+\begin{center}
+\begin{tabular}{ |c|c|c|}
+\hline
+$p$ & $q$ & $p \leftrightarrow q$  \\ \hline
+False & False & True \\
+False & True & False \\
+True & False & False \\
+True & True & True \\ \hline
+\end{tabular}
+\end{center}
+
+other ways to describe \emph{Biconditional Statements}:
+\begin{enumerate}
+\item "\emph{p} is necessary and sufficient for \emph{q}"
+\item "if \emph{p} then \emph{q}, and conversely"
+\item "\emph{p} iff \emph{q}"
+\end{enumerate}
+
+\textbf{Note:} 
+\begin{enumerate}
+\item $p \leftrightarrow q$ is equivalent to $(p \to q) \land (q \to p)$
+\item Biconditionals are not always explicit in natural language. In particular, the "if and only if" consturction used in biconditionals is rarely used in common language. Instead, biconditionals are often expressed using "if, then" or on "only if" construction. The other part of the  "if and only if" is implicit.
+
+ex. "If you finish your meal, then you can have dessert." What is really ment is "You can have dessert if and only if you finish your meal"
+\end{enumerate}
+\end{enumerate}
+
 \subsection {Quantifiers}
 \subsection {Identities}
 \subsection {Fallacies}
